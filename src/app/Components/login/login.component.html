@@ -1,0 +1,81 @@
+<div class="login-page" [ngStyle]="bgColor ? {'background-color': '#707070'} : {'background-color': '#878787'}">
+        <div class="login-content">
+            <div class="img-div">
+                <mat-card class="img-card">
+                    <mat-card-content class="img-content">
+                        <img src="../../../assets/2766594@2x.png" alt="img1">
+                    </mat-card-content>
+                    <mat-card-content class="tile-name">Online Book Store</mat-card-content>
+                </mat-card>
+            </div>
+    
+            <div class="user-details">
+
+                <mat-card class="details-card">
+                    <mat-tab-group (click)="loginBgColor()">
+                        <mat-tab label="Login" class="login-tab" (click)="loginBgColor()">
+                            <mat-card>
+                                <div class="input-div">
+                                    <div class="input-details">
+                                        <mat-form-field class="mat-outline-user" appearance="outline">
+                                            <mat-label>email</mat-label>
+                                            <input matInput placeholder="email" [(ngModel)]="email">
+                                            <mat-error>email is required</mat-error>
+                                        </mat-form-field>
+    
+                                        <mat-form-field class="mat-outline" appearance="outline">
+                                            <mat-label>Password</mat-label>
+                                            <input matInput type='text' placeholder="password" [(ngModel)]="password">
+                                            <mat-error>password is required</mat-error>
+                                        </mat-form-field>
+    
+                                        <button mat-flat-button class="submitbtn" (click)="login()" style="background: #A03037;">Login</button>
+                                    </div>
+                                    <mat-card-actions class="login-buttons">
+                                        <button mat-flat-button color="primary">facebook</button>
+                                        <button mat-stroked-button>google</button>
+                                    </mat-card-actions>
+                                </div>
+                            </mat-card>
+                        </mat-tab>
+    
+                        <mat-tab label="Signup" class="Signup-tab" (click)="signupBgColor()">
+                            <mat-card>
+                                <div class="input-div2">
+                                    <div class="input-details">
+                                        <mat-form-field class="mat-outline" appearance="outline">
+                                            <mat-label>Full Name</mat-label>
+                                            <input matInput placeholder="Full Name" [(ngModel)]="name">
+                                            <mat-error>Name is required</mat-error>
+                                        </mat-form-field>
+    
+                                        <mat-form-field class="mat-outline-user" appearance="outline">
+                                            <mat-label>email</mat-label>
+                                            <input matInput placeholder="email" [(ngModel)]="email">
+                                            <mat-error>email is required</mat-error>
+                                        </mat-form-field>
+    
+                                        <mat-form-field class="mat-outline" appearance="outline">
+                                            <mat-label>Password</mat-label>
+                                            <input matInput [(ngModel)]="password"
+                                                placeholder="password">
+                                            <mat-error>password is required</mat-error>
+                                        </mat-form-field>
+    
+                                        <mat-form-field class="mat-outline" appearance="outline">
+                                            <mat-label>Mobile Number</mat-label>
+                                            <input matInput placeholder="Mobile Number" [(ngModel)]="number">
+                                            <mat-error>Mobile Number is required</mat-error>
+                                        </mat-form-field>
+    
+                                        <button mat-flat-button class="submitbtn" (click)="signup()"  style="background: #A03037;">Signup</button>
+                                    </div>
+                                </div>
+                            </mat-card>
+                        </mat-tab>
+                    </mat-tab-group>
+                </mat-card>
+            </div>
+
+    </div>
+</div>

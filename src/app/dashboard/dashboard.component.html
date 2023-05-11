@@ -1,0 +1,33 @@
+<div class="header">
+    <div class="header-content">
+        <div class="logo">
+            <img src="../../assets/education (1).svg">
+            <h2>BookStore</h2>
+        </div>
+
+        <div class="searchbar-top" >
+            <div class="searchbar">
+                <button mat-icon-button matTooltip="search" class="top-icons" id="searchicon">
+                    <mat-icon>search</mat-icon>
+                </button>
+                <input class="searchtext" type="text" placeholder="Search">
+            </div>
+        </div>
+        
+        <div>
+            <div class="right">
+                <button mat-icon-button matTooltip="account" class="top-icons"><mat-icon>account_circle</mat-icon>
+                </button>
+
+                <button mat-icon-button matTooltip="Cart" class="top-icons"><mat-icon>shopping_cart</mat-icon>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div>
+    <router-outlet></router-outlet>
+    <!-- <app-display-books></app-display-books> -->
+</div>
