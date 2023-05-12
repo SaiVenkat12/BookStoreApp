@@ -7,6 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LoginComponent } from './Components/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DisplayBooksComponent } from './Components/display-books/display-books.component';
+import { ViewBooksComponent } from './Components/view-books/view-books.component';
+import { GetallbooksComponent } from './Components/getallbooks/getallbooks.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -17,8 +20,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
-import { DisplayBooksComponent } from './Components/display-books/display-books.component';
-import { ViewBooksComponent } from './Components/view-books/view-books.component';
+import {MatDividerModule} from '@angular/material/divider';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { ViewBooksComponent } from './Components/view-books/view-books.component
     LoginComponent,
     DashboardComponent,
     DisplayBooksComponent,
-    ViewBooksComponent
+    ViewBooksComponent,
+    GetallbooksComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,9 @@ import { ViewBooksComponent } from './Components/view-books/view-books.component
     MatInputModule,
     MatTabsModule,
     MatSnackBarModule,
-    MatIconModule
+    MatIconModule,
+    MatDividerModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

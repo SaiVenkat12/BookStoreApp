@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './Components/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { DisplayBooksComponent } from './Components/display-books/display-books.component';
+import { GetallbooksComponent } from './Components/getallbooks/getallbooks.component';
+import { ViewBooksComponent } from './Components/view-books/view-books.component';
 
 const routes: Routes = [
   {
@@ -11,8 +12,10 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
 
   {path:'home',component:DashboardComponent, 
-  children: [{ path: 'Books', component: DisplayBooksComponent},
-  { path: '', pathMatch: 'full', redirectTo: 'Books' },]},
+  children: [{ path: 'AllBooks', component: GetallbooksComponent},
+   { path: '', pathMatch: 'full', redirectTo: 'AllBooks'},
+   {path: 'viewBookDetails', component: ViewBooksComponent}
+]}
 ];
 
 @NgModule({
