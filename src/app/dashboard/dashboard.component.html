@@ -5,14 +5,14 @@
             <h2>BookStore</h2>
         </div>
 
-        <!-- <div class="searchbar-top" >
+        <div class="searchbar-top" >
             <div class="searchbar">
                 <button mat-icon-button matTooltip="search" class="top-icons" id="searchicon">
                     <mat-icon>search</mat-icon>
                 </button>
-                <input class="searchtext" type="text" placeholder="Search">
+                <input class="searchtext" type="text" placeholder="Search" (keyup)="SearchBooks($event)">
             </div>
-        </div> -->
+        </div>
         
         <div>
             <div class="right">

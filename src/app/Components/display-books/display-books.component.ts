@@ -1,5 +1,4 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { BookService } from 'src/app/Services/BookService/book.service';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/Services/DataService/data.service';
 @Component({
@@ -9,12 +8,23 @@ import { DataService } from 'src/app/Services/DataService/data.service';
 })
 export class DisplayBooksComponent implements OnInit {
   @Input() AllBooks:any
+
+  Searchbookdetails:any;
   
-  constructor(private bookService:BookService, private route: Router, private dataService:DataService){}
+  constructor(private route: Router, private dataService:DataService){}
 
   ngOnInit(): void {
-    console.log(this.AllBooks);
+    this.bookSearch()
+  }
+
+  bookSearch(){
+    console.log("search book");
     
+    this.dataService.currentMessage.subscribe((response)=>{
+      this.Searchbookdetails=response;
+      console.log(this.Searchbookdetails);
+      
+    })
   }
   
   viewBookDetails(book:any){

@@ -21,6 +21,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
+import { SearchBookPipe } from './Components/pipes/search-book.pipe';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import {MatDividerModule} from '@angular/material/divider';
     DashboardComponent,
     DisplayBooksComponent,
     ViewBooksComponent,
-    GetallbooksComponent
+    GetallbooksComponent,
+    SearchBookPipe
   ],
   imports: [
     BrowserModule,
