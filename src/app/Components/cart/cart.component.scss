@@ -1,0 +1,176 @@
+.display {
+    margin: 5%;
+}
+
+.card-out {
+    display: flex;
+    justify-content: center;
+    margin-right: 10%;
+}
+
+.cards {
+    width: 70%;
+    margin-bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.Address,
+.Order,
+.bookDetails {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #DCDCDC;
+    border-radius: 1px;
+    opacity: 1;
+}
+
+.book-card {
+    display: flex;
+    gap: 12px;
+    padding: 2%;
+    padding-left: 4%;
+}
+
+.book-card-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.book-info {
+    display: flex;
+}
+
+img {
+    width: 50%;
+}
+
+.order-btn {
+    justify-content: flex-end;
+}
+
+.cart-Address {
+    width: 275px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #DCDCDC;
+    border-radius: 1px;
+    opacity: 1;
+}
+
+.placeorder {
+    width: 151px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 1;
+    background: #3371B5 0% 0% no-repeat padding-box;
+    border-radius: 2px;
+    opacity: 1;
+}
+
+.order-header{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.customer-title{
+    width: 139px;
+    height: 24px;
+    font-size: 18px;
+font-weight: 600;
+    text-align: left;
+    font: normal normal medium 18px/24px Roboto;
+    letter-spacing: 0px;
+    color: #333232;
+    opacity: 1;
+}
+
+.new-address{
+    width: 150px;
+height: 35px;
+text-align: left;
+letter-spacing: 0px;
+color: #A03037;
+opacity: 1;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #A03037;
+border-radius: 2px;
+opacity: 1;
+display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-details{
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-div1{
+    width: 100%;
+    display: flex;
+    gap: 12px;
+}
+.radio-btn{
+    text-align: left;
+font-size: 15px;
+font-weight: 600;
+letter-spacing: 0px;
+color: #0A0102;
+opacity: 1;
+}
+
+.Address-input-div{
+    display: flex;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+    flex-direction: column;
+}
+
+.Address-input{
+    width: 512px;
+height: 82px;
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+border: 1px solid #DCDCDC;
+border-radius: 2px;
+opacity: 1;
+}
+
+.continue-div{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.continue-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 35px;
+    background: #3371B5 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    opacity: 1;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.order-card{
+    box-shadow: none;
+}

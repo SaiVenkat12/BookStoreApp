@@ -20,6 +20,6 @@ export class BookService {
       })
     }
 
-    return this.httpService.getService("get/book", false, {})
+    return this.httpService.getService("get/book", false, httpHeadersOption)
   }
 }

@@ -21,8 +21,6 @@ export class LoginComponent {
 
   loginBgColor(){
     this.bgColor=!this.bgColor
-    console.log(this.bgColor);
-    
   }
 
   signupBgColor(){
@@ -61,6 +59,7 @@ export class LoginComponent {
       this.snackBar.open('Login Successfull !', '', {
         duration: 2000
       });
+      localStorage.setItem('token',result.result.accessToken)
       this.route.navigateByUrl('/home');
     })
   }

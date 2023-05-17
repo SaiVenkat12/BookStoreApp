@@ -1,4 +1,5 @@
 .header {
+    height: 7%;
     background: #A03037;
     display: flex;
     justify-content: center;
@@ -9,6 +10,7 @@
     padding-right: 36px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: #FFFFFF;
 
 }
@@ -19,6 +21,25 @@
 
 h2 {
     margin: 5%;
+}
+
+.searchbar-top{
+    display: flex;
+    align-items: center;
+}
+
+#searchicon{
+    color:#9D9D9D;
+}
+
+.searchbar{
+    display: flex;
+    align-items: center;
+    width: 490px;
+    height: 33px;
+    background: #FCFCFC 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    opacity: 1;
 }
 
 input {

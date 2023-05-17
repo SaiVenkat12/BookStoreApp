@@ -120,6 +120,31 @@ button{
     color: #ffff;
 }
 
+.books-Qty{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.Qty-btn{
+    width: 38px;
+    height: 38px;
+    color: #373434;
+    border-radius: 50%;
+    background: #FAFAFA 0% 0% no-repeat padding-box;
+    border: 1px solid #DBDBDB;
+    opacity: 1;
+}
+
+.Qty{
+    width: 66px;
+height: 38px;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #DBDBDB;
+border-radius: 2px;
+opacity: 1;
+}
+
 .ratingblock
 {
     display: flex;
