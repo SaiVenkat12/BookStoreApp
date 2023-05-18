@@ -5,12 +5,12 @@ import { HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class CartService {
+export class WhishlistService {
 
   token: any;
   constructor(private httpService: HttpService) { }
 
-  cartAddBooks(reqdata: any) {
+  WhishlistAddBooks(reqdata: any) {
     this.token = localStorage.getItem('token');
 
     let httpHeadersOption = {
@@ -19,10 +19,10 @@ export class CartService {
         'x-access-token': this.token
       })
     }
-    return this.httpService.postService('add_cart_item/' + reqdata, {}, true, httpHeadersOption)
+    return this.httpService.postService('add_wish_list/' + reqdata, {}, true, httpHeadersOption)
   }
 
-  getCartBooks() {
+  getWhishlistBooks() {
     this.token = localStorage.getItem('token');
 
     let httpHeadersOption = {
@@ -31,10 +31,10 @@ export class CartService {
         'x-access-token': this.token
       })
     }
-    return this.httpService.getService("get_cart_items", true, httpHeadersOption)
+    return this.httpService.getService("get_wishlist_items", true, httpHeadersOption)
   }
 
-  deleteCartItems(reqdata: any) {
+  deleteWhishlistItems(reqdata: any) {
     this.token = localStorage.getItem('token');
 
     let httpHeadersOption = {
@@ -43,10 +43,7 @@ export class CartService {
         'x-access-token': this.token
       })
     }
-    return this.httpService.deleteService('remove_cart_item/' + reqdata, true, httpHeadersOption)
+    return this.httpService.deleteService("remove_wishlist_item/"+reqdata, true, httpHeadersOption)
   }
-
 
 }
-
-

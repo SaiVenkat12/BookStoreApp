@@ -1,7 +1,7 @@
 <div class="display">
     <div class="return">
         <span class="home" routerLink="/home">Home </span>
-        <span class="bookNo"> / My cart</span>
+        <span class="mypage"> / My cart</span>
     </div>
 
     <div class="card-out">
@@ -9,118 +9,127 @@
             <div class="bookDetails">
                 <mat-card class="book-card">
                     <div class="book-card-title">
-                        <mat-card-title>My Cart(1)</mat-card-title>
-                    <mat-card-actions>
-                        <span class="cart-Address">BridgeLabz Solutions LLP, No...</span>
-                    </mat-card-actions>
+                        <mat-card-title>My Cart({{allCartBooks.length}})</mat-card-title>
+                        <mat-card-actions>
+                            <span class="cart-Address">BridgeLabz Solutions LLP, No...</span>
+                        </mat-card-actions>
                     </div>
-                    <div class="book-info">
+                    <div class="book-info" *ngFor="let book of allCartBooks;
+                    let i = index">
                         <div class="book-img">
                             <img mat-card-image src="../../../assets/book_imgs/Image 11@2x.png" alt="">
                         </div>
-                        <div >
+                        <div>
                             <mat-card-title class="bookTitle">
-                                <span>Don't Make Me Think</span>
+                                <span>{{book.product_id.bookName}}</span>
                             </mat-card-title>
                             <mat-card-content class="details">
-                                <span class="author">by Steve Krug</span>
+                                <span class="author">{{book.product_id.author}}</span>
                                 <h1>Rs. 1500</h1>
                             </mat-card-content>
+                            <div class="books-Qty">
+                                <button class="Qty-btn" [disabled]="bookCount === 1" (click)=" decrease()">-</button>
+                                <div class="qty">{{book.quantityToBuy}}</div>
+                                <button class="Qty-btn" (click)="increase()">+</button>
+                                <span class="remove" (click)="remove(i)">Remove</span>
+                            </div>
                         </div>
                     </div>
-                    <mat-card-actions class="order-btn">
-                        <span class="placeorder">Place Order</span>
+                    <mat-card-actions class="order-btn" *ngIf="!hide">
+                        <span class="placeorder" (click)="placeOrder()">Place Order</span>
                     </mat-card-actions>
                 </mat-card>
             </div>
 
             <div class="Address">
-                <mat-accordion>
-                    <mat-expansion-panel hideToggle (opened)="panelOpenState = true"
-                               (closed)="panelOpenState = false">
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                {{panelOpenState ? '' : 'Address Details'}}
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <div>
-                <div class="order-header">
-                    <span class="customer-title">Customer Details</span>
-                    <span class="new-address">Add New Address</span>
-                </div>
-                <div class="input-details">
-                    <div class="input-div1">
-                        <mat-form-field class="mat-outline" appearance="outline">
-                            <mat-label>Full Name</mat-label>
-                            <input matInput placeholder="Full Name">
-                            <mat-error>Name is required</mat-error>
-                        </mat-form-field>
+                <mat-accordion class="exp-panel-closed">
+                    <mat-expansion-panel class="exp-panel" hideToggle [expanded]="step >= 1" 
+                        (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header class="exp-panel-header">
+                            <mat-panel-title>
+                                {{panelOpenState ? 'Address Details' : 'Address Details'}}
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div>
+                            <div class="order-header">
+                                <span class="customer-title">Customer Details</span>
+                                <span class="new-address">Add New Address</span>
+                            </div>
+                            <div class="input-details">
+                                <div class="input-div1">
+                                    <mat-form-field class="mat-outline" appearance="outline">
+                                        <mat-label>Full Name</mat-label>
+                                        <input matInput placeholder="Full Name">
+                                        <mat-error>Name is required</mat-error>
+                                    </mat-form-field>
 
-                        <mat-form-field class="mat-outline" appearance="outline">
-                            <mat-label>Mobile Number</mat-label>
-                            <input matInput placeholder="Mobile Number">
-                            <mat-error>Mobile Number is required</mat-error>
-                        </mat-form-field>
-                    </div>
-                        <mat-radio-button class="radio-btn" value="1">
-                            <div class="radio-btn">1.Work</div>
-                        </mat-radio-button>
-                    <div class="Address-input-div">
-                        <mat-label>Address</mat-label>
-                        <input class="Address-input" type="text" placeholder="Address">
-                    </div>
-                    <div class="input-div1">
-                        <mat-form-field class="mat-outline" appearance="outline">
-                            <mat-label>City/Town</mat-label>
-                            <input matInput placeholder="City/Town">
-                            <mat-error>City/Town is required</mat-error>
-                        </mat-form-field>
-
-                        <mat-form-field class="mat-outline" appearance="outline">
-                            <mat-label>State</mat-label>
-                            <input matInput placeholder="State">
-                            <mat-error>State is required</mat-error>
-                        </mat-form-field>
-                    </div>
-                    <div class="continue-div">
-                        <span class="continue-btn">Continue</span></div>
-                </div>
-            </div>
-          </mat-expansion-panel>
-        </mat-accordion>
-            </div>
-        
-            <div class="Order">
-                <mat-expansion-panel hideToggle>
-                    <mat-expansion-panel-header>
-                      <mat-panel-title>
-                        Order summery
-                      </mat-panel-title>
-                    </mat-expansion-panel-header>
-                    <div class="bookDetail">
-                        <mat-card class="order-card">
-                            <div class="book-info">
-                                <div class="book-img">
-                                    <img mat-card-image src="../../../assets/book_imgs/Image 11@2x.png" alt="">
+                                    <mat-form-field class="mat-outline" appearance="outline">
+                                        <mat-label>Mobile Number</mat-label>
+                                        <input matInput placeholder="Mobile Number">
+                                        <mat-error>Mobile Number is required</mat-error>
+                                    </mat-form-field>
                                 </div>
-                                <div >
-                                    <mat-card-title class="bookTitle">
-                                        <span>Don't Make Me Think</span>
-                                    </mat-card-title>
-                                    <mat-card-content class="details">
-                                        <span class="author">by Steve Krug</span>
-                                        <h1>Rs. 1500</h1>
-                                    </mat-card-content>
+                                <mat-radio-button class="radio-btn" value="1">
+                                    <div class="radio-btn">1.Work</div>
+                                </mat-radio-button>
+                                <div class="Address-input-div">
+                                    <mat-label>Address</mat-label>
+                                    <input class="Address-input" type="text" placeholder="Address">
+                                </div>
+                                <div class="input-div1">
+                                    <mat-form-field class="mat-outline" appearance="outline">
+                                        <mat-label>City/Town</mat-label>
+                                        <input matInput placeholder="City/Town">
+                                        <mat-error>City/Town is required</mat-error>
+                                    </mat-form-field>
+
+                                    <mat-form-field class="mat-outline" appearance="outline">
+                                        <mat-label>State</mat-label>
+                                        <input matInput placeholder="State">
+                                        <mat-error>State is required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="continue-div" *ngIf="!show">
+                                    <span class="continue-btn" (click)="continue()">Continue</span>
                                 </div>
                             </div>
-                            <mat-card-actions class="order-btn">
-                                <span class="placeorder">CheckOut</span>
-                            </mat-card-actions>
-                        </mat-card>
-                    </div>
-                  </mat-expansion-panel>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+
+            <div class="Order">
+                <mat-accordion class="exp-panel-closed">
+                    <mat-expansion-panel hideToggle [expanded]="step === 2" class="exp-panel">
+                        <mat-expansion-panel-header class="exp-panel-header">
+                            <mat-panel-title>
+                                Order summery
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="bookDetail" >
+                            <mat-card class="order-card">
+                                <div class="book-info" *ngFor="let book of allCartBooks">
+                                    <div class="book-img">
+                                        <img mat-card-image src="../../../assets/book_imgs/Image 11@2x.png" alt="">
+                                    </div>
+                                    <div>
+                                        <mat-card-title class="bookTitle">
+                                            <span>{{book.product_id.bookName}}</span>
+                                        </mat-card-title>
+                                        <mat-card-content class="details">
+                                            <span class="author">{{book.product_id.author}}</span>
+                                            <h1>Rs. 1500</h1>
+                                        </mat-card-content>
+                                    </div>
+                                </div>
+                                <mat-card-actions class="order-btn">
+                                    <span class="placeorder">CheckOut</span>
+                                </mat-card-actions>
+                            </mat-card>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
             </div>
         </div>
     </div>
 </div>
-

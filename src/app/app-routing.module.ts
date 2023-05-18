@@ -6,6 +6,7 @@ import { GetallbooksComponent } from './Components/getallbooks/getallbooks.compo
 import { ViewBooksComponent } from './Components/view-books/view-books.component';
 import { AuthenticationGuard } from './Components/authguard/authentication.guard';
 import { CartComponent } from './Components/cart/cart.component';
+import { WhishListComponent } from './Components/whish-list/whish-list.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,10 @@ const routes: Routes = [
   children: [{ path: 'AllBooks', component: GetallbooksComponent},
    { path: '', pathMatch: 'full', redirectTo: 'AllBooks'},
    {path: 'viewBookDetails', component: ViewBooksComponent},
-   {path:"cart", component:CartComponent}
+   {path:"cart", component:CartComponent},
+   {
+    path:"wishlist", component:WhishListComponent
+   }
 ]}
 ];
 

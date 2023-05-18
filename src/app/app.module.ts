@@ -27,6 +27,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatMenuModule} from '@angular/material/menu';
+import { WhishListComponent } from './Components/whish-list/whish-list.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import {MatRadioModule} from '@angular/material/radio';
     ViewBooksComponent,
     GetallbooksComponent,
     SearchBookPipe,
-    CartComponent
+    CartComponent,
+    WhishListComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +59,7 @@ import {MatRadioModule} from '@angular/material/radio';
     MatDividerModule,
     MatExpansionModule,
     MatRadioModule,
+    MatMenuModule,
     
   ],
   providers: [

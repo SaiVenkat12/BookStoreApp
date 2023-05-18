@@ -12,7 +12,6 @@
     justify-content: space-between;
     align-items: center;
     color: #FFFFFF;
-
 }
 
 .logo {
@@ -23,16 +22,16 @@ h2 {
     margin: 5%;
 }
 
-.searchbar-top{
+.searchbar-top {
     display: flex;
     align-items: center;
 }
 
-#searchicon{
-    color:#9D9D9D;
+#searchicon {
+    color: #9D9D9D;
 }
 
-.searchbar{
+.searchbar {
     display: flex;
     align-items: center;
     width: 490px;
@@ -52,4 +51,41 @@ input {
 .right {
     display: flex;
     gap: 44px;
+}
+
+.mat-mdc-menu-content {
+    margin: 10px;
+    padding: 0;
+}
+.userName{
+    margin: 15px;
+    display: flex;
+}
+
+.Menu {
+    margin: 15px;
+    width: 200px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.menu-btns {
+    height: 16px;
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #878787;
+    opacity: 1;
+}
+
+.Logout{
+    border: 1px solid #A03037;
+border-radius: 2px;
+opacity: 1;
+}
+
+.logout-div{
+    letter-spacing: 0px;
+color: #A03037;
+opacity: 1;
 }
