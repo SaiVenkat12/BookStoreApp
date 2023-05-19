@@ -25,12 +25,13 @@
                             </mat-card-title>
                             <mat-card-content class="details">
                                 <span class="author">{{book.product_id.author}}</span>
-                                <h1>Rs. 1500</h1>
+                                <h1>Rs.{{book.product_id.price}}</h1>
                             </mat-card-content>
                             <div class="books-Qty">
-                                <button class="Qty-btn" [disabled]="bookCount === 1" (click)=" decrease()">-</button>
+                                <button class="Qty-btn" [disabled]="bookCount === 1"
+                                    (click)=" decrease(book._id,book.quantityToBuy)">-</button>
                                 <div class="qty">{{book.quantityToBuy}}</div>
-                                <button class="Qty-btn" (click)="increase()">+</button>
+                                <button class="Qty-btn" (click)="increase(book._id,book.quantityToBuy)">+</button>
                                 <span class="remove" (click)="remove(i)">Remove</span>
                             </div>
                         </div>
@@ -43,7 +44,7 @@
 
             <div class="Address">
                 <mat-accordion class="exp-panel-closed">
-                    <mat-expansion-panel class="exp-panel" hideToggle [expanded]="step >= 1" 
+                    <mat-expansion-panel class="exp-panel" hideToggle [expanded]="step >= 1"
                         (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                         <mat-expansion-panel-header class="exp-panel-header">
                             <mat-panel-title>
@@ -57,37 +58,45 @@
                             </div>
                             <div class="input-details">
                                 <div class="input-div1">
-                                    <mat-form-field class="mat-outline" appearance="outline">
+                                    <div class="input-sec">
                                         <mat-label>Full Name</mat-label>
-                                        <input matInput placeholder="Full Name">
-                                        <mat-error>Name is required</mat-error>
-                                    </mat-form-field>
+                                        <input matInput class="input" type="text" name="fullname" [(ngModel)]="name"
+                                            required>
+                                    </div>
 
-                                    <mat-form-field class="mat-outline" appearance="outline">
-                                        <mat-label>Mobile Number</mat-label>
-                                        <input matInput placeholder="Mobile Number">
-                                        <mat-error>Mobile Number is required</mat-error>
-                                    </mat-form-field>
+                                    <div class="input-sec">
+                                        <mat-label>Mobile number</mat-label>
+                                        <input matInput class="input" type="text" name="mobilenumber"
+                                            [(ngModel)]="mobile" required>
+                                    </div>
                                 </div>
-                                <mat-radio-button class="radio-btn" value="1">
-                                    <div class="radio-btn">1.Work</div>
-                                </mat-radio-button>
                                 <div class="Address-input-div">
                                     <mat-label>Address</mat-label>
-                                    <input class="Address-input" type="text" placeholder="Address">
+                                    <input matInput class="Address-input" type="text" [(ngModel)]="address" required>
                                 </div>
                                 <div class="input-div1">
-                                    <mat-form-field class="mat-outline" appearance="outline">
-                                        <mat-label>City/Town</mat-label>
-                                        <input matInput placeholder="City/Town">
-                                        <mat-error>City/Town is required</mat-error>
-                                    </mat-form-field>
+                                    <div class="input-sec">
+                                        <mat-label>city/town</mat-label>
+                                        <input matInput class="input" type="text" name="fullname" [(ngModel)]="city"
+                                            required>
+                                    </div>
 
-                                    <mat-form-field class="mat-outline" appearance="outline">
+                                    <div class="input-sec">
                                         <mat-label>State</mat-label>
-                                        <input matInput placeholder="State">
-                                        <mat-error>State is required</mat-error>
-                                    </mat-form-field>
+                                        <input matInput class="input" type="text" name="mobilenumber"
+                                            [(ngModel)]="state" required>
+                                    </div>
+                                </div>
+                                <div>
+                                    <mat-label id="adddressType">Type</mat-label>
+                                    <div aria-labelledby="addressType" class="radio-div">
+                                        <mat-radio-button class="radio-btn" value="1" (change)="radioout1()">Home
+                                        </mat-radio-button>
+                                        <mat-radio-button class="radio-btn" value="2" (change)="radioout1()">Work
+                                        </mat-radio-button>
+                                        <mat-radio-button class="radio-btn" value="3">other
+                                        </mat-radio-button>
+                                    </div>
                                 </div>
                                 <div class="continue-div" *ngIf="!show">
                                     <span class="continue-btn" (click)="continue()">Continue</span>
@@ -106,7 +115,7 @@
                                 Order summery
                             </mat-panel-title>
                         </mat-expansion-panel-header>
-                        <div class="bookDetail" >
+                        <div class="bookDetail">
                             <mat-card class="order-card">
                                 <div class="book-info" *ngFor="let book of allCartBooks">
                                     <div class="book-img">
@@ -118,12 +127,13 @@
                                         </mat-card-title>
                                         <mat-card-content class="details">
                                             <span class="author">{{book.product_id.author}}</span>
-                                            <h1>Rs. 1500</h1>
+                                            <h1>Rs.{{book.product_id.price}}</h1>
                                         </mat-card-content>
                                     </div>
                                 </div>
+                                <div class="total">Total: Rs.{{totalAmount}}</div>
                                 <mat-card-actions class="order-btn">
-                                    <span class="placeorder">CheckOut</span>
+                                    <span class="placeorder" (click)="Checkout()">CheckOut</span>
                                 </mat-card-actions>
                             </mat-card>
                         </div>

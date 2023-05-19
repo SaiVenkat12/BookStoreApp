@@ -17,7 +17,7 @@
                 <img class="main-img" src="../../../assets/book_imgs/Image 11@2x.png">
             </div>
             <div class="btns">
-                <button mat-flat-button *ngIf="show" (click)="Add()" style="background: #A03037;color: #ffff;width: 140px;">Add To Bag </button>
+                <button mat-flat-button *ngIf="show" (click)="AddToCart()" style="background: #A03037;color: #ffff;width: 140px;">Add To Bag </button>
                 <div class="books-Qty" *ngIf="!show">
                     <button class="Qty-btn" [disabled]="bookCount === 1" (click)=" decrease()">-</button>
                     <div class="qty">{{bookCount}}</div>
@@ -42,7 +42,7 @@
                 </span>
             </div>
             <div class="price">
-                <h1>Rs. 1500</h1>
+                <h1>Rs.{{bookData.price}}</h1>
             </div>
 
             <mat-divider class="divider"></mat-divider>
@@ -72,13 +72,23 @@
                         <img class="rate-img" src="../../../assets/star_FILL0_wght400_GRAD0_opsz48.svg">
                         <img class="rate-img" src="../../../assets/star_FILL0_wght400_GRAD0_opsz48.svg">
                     </div>
-                    <textarea class="review-input" placeholder="Write your review.."></textarea>
+                    <input class="review-input" placeholder="Write your review..">
                     <div class="reviewBtn-div">
                         <button class="reviewBtn" mat-flat-button color="primary">Submit</button>
                     </div>
                     
                 </div>
-                <div>
+                <div class="display-comments">
+                    <mat-card class="comment-card">
+                        <div class="comments" *ngFor="let comment of commentdata">
+                            <mat-card-title>{{comment.user_id.fullName}}</mat-card-title>
+                        <mat-card-content>
+                            <div>
+                                {{comment.comment}}
+                            </div>
+                        </mat-card-content>
+                        </div>
+                    </mat-card>
                     
                 </div>
             </div>

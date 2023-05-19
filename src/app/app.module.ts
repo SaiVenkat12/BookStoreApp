@@ -29,6 +29,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatMenuModule} from '@angular/material/menu';
 import { WhishListComponent } from './Components/whish-list/whish-list.component';
+import { OrderComponent } from './Components/order/order.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { WhishListComponent } from './Components/whish-list/whish-list.component
     GetallbooksComponent,
     SearchBookPipe,
     CartComponent,
-    WhishListComponent
+    WhishListComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

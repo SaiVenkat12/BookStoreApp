@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { DataService } from 'src/app/Services/DataService/data.service';
 import { CartService } from 'src/app/Services/cartService/cart.service';
 import { WhishlistService } from 'src/app/Services/WhishlistService/whishlist.service';
+import { FeedbackService } from 'src/app/Services/FeedbackService/feedback.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -12,14 +13,17 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ViewBooksComponent implements OnInit{
 
   bookData:any;
+  commentdata:any=[];
   show=true;
   bookCount=1;
   id:any;
 
-  constructor(private dataService:DataService, private cartServive:CartService,private snackBar: MatSnackBar, private whishlist:WhishlistService){}
+  constructor(private dataService:DataService, private cartServive:CartService,
+              private snackBar: MatSnackBar, private whishlist:WhishlistService, private feedback:FeedbackService){}
 
   ngOnInit(): void {
     this.getBookInfo()
+    this.getAllComments()
   }
 
 getBookInfo(){
@@ -31,7 +35,7 @@ this.dataService.currentMessage.subscribe((result : any) => {
 })
 }
 
-  Add(){
+  AddToCart(){
     this.show=false;
     console.log("Id: ",this.id);
     
@@ -51,6 +55,18 @@ this.dataService.currentMessage.subscribe((result : any) => {
       this.snackBar.open('Added to the WhishList !', 'ok', {
         duration: 2000
       });
+    })
+  }
+
+  getAllComments(){
+    console.log("Feedback Id ",this.id);
+    
+    this.feedback.getFeedback(this.id).subscribe((result:any)=>{
+      this.commentdata=result.result;
+      console.log(result);
+      console.log("comments",this.commentdata);
+      
+      
     })
   }
 

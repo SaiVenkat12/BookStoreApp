@@ -10,6 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class WhishListComponent implements OnInit {
 
   whishlistBooks:any=[];
+  filter:any=[];
   id: string='';
   constructor(private snackBar: MatSnackBar, private whishlist:WhishlistService){}
 
@@ -19,8 +20,11 @@ export class WhishListComponent implements OnInit {
 
   getWhishlistBooks() {
     this.whishlist.getWhishlistBooks().subscribe((result: any) => {
-      this.whishlistBooks = result.result;
-      this.whishlistBooks=this.whishlistBooks.reverse();
+      
+      this.filter = result.result;
+      this.filter=this.filter.reverse();
+
+      this.whishlistBooks=this.filter.filter((x:any)=>x.product_id != null)
       console.log(result);
       console.log("list",this.whishlistBooks);
     })

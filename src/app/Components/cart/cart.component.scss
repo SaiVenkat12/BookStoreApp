@@ -201,10 +201,28 @@ img {
     gap: 12px;
 }
 
+.input{
+    width: 251px;
+height: 45px;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #DCDCDC;
+opacity: 1;
+}
+
+.input-sec{
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-div{
+    display: flex;
+    gap: 8%;
+}
+
 .radio-btn {
     text-align: left;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0px;
     color: #0A0102;
     opacity: 1;
@@ -250,4 +268,13 @@ img {
 
 .order-card {
     box-shadow: none;
+}
+
+.total{
+    margin: 2%;
+    padding-right: 10px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 19px;
+    font-weight: 600;
 }
