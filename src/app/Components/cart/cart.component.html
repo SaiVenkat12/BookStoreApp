@@ -1,6 +1,6 @@
 <div class="display">
     <div class="return">
-        <span class="home" routerLink="/home">Home </span>
+        <span class="home" (click)="Home()">Home </span>
         <span class="mypage"> / My cart</span>
     </div>
 
@@ -127,7 +127,10 @@
                                         </mat-card-title>
                                         <mat-card-content class="details">
                                             <span class="author">{{book.product_id.author}}</span>
-                                            <h1>Rs.{{book.product_id.price}}</h1>
+                                            <span class="price-Qty">
+                                                <h1>Rs.{{book.product_id.price}}</h1>
+                                                <h4>X{{book.quantityToBuy}} (Qty)</h4>
+                                            </span>
                                         </mat-card-content>
                                     </div>
                                 </div>

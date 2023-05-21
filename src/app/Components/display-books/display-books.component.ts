@@ -1,4 +1,5 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { AnimationKeyframesSequenceMetadata } from '@angular/animations';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/Services/DataService/data.service';
 @Component({
@@ -7,30 +8,38 @@ import { DataService } from 'src/app/Services/DataService/data.service';
   styleUrls: ['./display-books.component.scss']
 })
 export class DisplayBooksComponent implements OnInit {
-  @Input() AllBooks:any
+  @Input() AllBooks: any
 
-  Searchbookdetails:any;
-  
-  constructor(private route: Router, private dataService:DataService){}
+  Searchbookdetails: any;
+  sortBooks:any
+
+  constructor(private route: Router, private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.bookSearch()
+    this.bookSearch();
   }
 
-  bookSearch(){
+  bookSearch() {
     console.log("search book");
-    
-    this.dataService.currentMessage.subscribe((response)=>{
-      this.Searchbookdetails=response;
+
+    this.dataService.currentMessage.subscribe((response) => {
+      this.Searchbookdetails = response;
       console.log(this.Searchbookdetails);
-      
+
     })
   }
   
-  viewBookDetails(book:any){
+  sort(e:any){
+    this.sortBooks=e.target.value;
+  }
+
+  viewBookDetails(book: any) {
     console.log("viewBook");
     this.dataService.sendData(book);
     this.route.navigateByUrl("/home/viewBookDetails");
   }
-  
-}
+
+ 
+  }
+
+

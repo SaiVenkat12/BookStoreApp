@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WhishlistService } from 'src/app/Services/WhishlistService/whishlist.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-whish-list',
@@ -12,10 +13,14 @@ export class WhishListComponent implements OnInit {
   whishlistBooks:any=[];
   filter:any=[];
   id: string='';
-  constructor(private snackBar: MatSnackBar, private whishlist:WhishlistService){}
+  constructor(private snackBar: MatSnackBar, private whishlist:WhishlistService,private route: Router){}
 
   ngOnInit(): void {
     this.getWhishlistBooks();
+  }
+
+  Home(){
+    this.route.navigateByUrl("/home");
   }
 
   getWhishlistBooks() {

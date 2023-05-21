@@ -270,6 +270,12 @@ opacity: 1;
     box-shadow: none;
 }
 
+.price-Qty{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
 .total{
     margin: 2%;
     padding-right: 10px;

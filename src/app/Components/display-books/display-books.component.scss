@@ -4,8 +4,10 @@
 
 .header {
     margin: 20px;
+    margin-right: 11%;
     display: flex;
-    align-items: baseline;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -19,6 +21,27 @@ h3 {
     opacity: 1;
 }
 
+.book-count{
+    display: flex;
+    align-items: center;
+}
+
+.sort{
+    width: 161px;
+height: 30px;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #E2E2E2;
+border-radius: 1px;
+opacity: 1;
+}
+
+option{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #E2E2E2;
+border-radius: 1px;
+opacity: 1;
+}
+
 .allBooks, .bookData {
     margin-left: 10px;
     width: 100%;
@@ -28,10 +51,9 @@ h3 {
 }
 
 .book-card {
-    margin: 10px;
-    height: 35%;
-    min-height: 330px;
-    width: 20%;
+    margin: 12px;
+    min-height: 345px;
+    width: 348px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #E2E2E2;
     border-radius: 3px;
@@ -49,17 +71,15 @@ h3 {
 }
 
 img {
-    width: 105px;
-    height: 135px;
+    width: 135px;
+    height: 160px;
     background: transparent 0% 0% no-repeat padding-box;
     opacity: 1;
 }
 
 .bookTitle {
-    margin-top: 3%;
-    padding-top: 3%;
+    margin-top: 3%;;
     padding-left: 5%;
-    padding-bottom: 2%;
     text-align: left;
     letter-spacing: 0px;
     color: #0A0102;
@@ -69,7 +89,7 @@ img {
 .details{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
 }
 
 .author{

@@ -24,6 +24,7 @@ export class CartComponent implements OnInit {
   step = 0;
   totalAmount:any=0;
   orderArray:any=[];
+  cartitemNo: any
 
   name: any;
   mobile: any;
@@ -42,11 +43,17 @@ export class CartComponent implements OnInit {
   getcartBook() {
     this.cartService.getCartBooks().subscribe((result: any) => {
       this.allCartBooks = result.result;
+      this.cartitemNo=this.allCartBooks.length
+      this.dataService.sendCartNo(this.cartitemNo);
       console.log(result);
       console.log("cart", this.allCartBooks);
       this.totalAmount=0;
       this.cartTotal();
     })
+  }
+
+  Home(){
+    this.route.navigateByUrl("/home");
   }
 
   remove(ID: any) {

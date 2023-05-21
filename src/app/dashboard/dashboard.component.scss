@@ -1,5 +1,5 @@
 .header {
-    height: 7%;
+    height: 8.5%;
     background: #A03037;
     display: flex;
     justify-content: center;
@@ -7,6 +7,7 @@
 
 .header-content {
     width: 80%;
+    height: 100%;
     padding-right: 36px;
     display: flex;
     justify-content: space-between;
@@ -16,10 +17,13 @@
 
 .logo {
     display: flex;
+    cursor: pointer;
+    align-items: center;
 }
 
 h2 {
     margin: 5%;
+    font-size: 24px;
 }
 
 .searchbar-top {
@@ -34,8 +38,8 @@ h2 {
 .searchbar {
     display: flex;
     align-items: center;
-    width: 490px;
-    height: 33px;
+    width: 590px;
+    height: 44px;
     background: #FCFCFC 0% 0% no-repeat padding-box;
     border-radius: 3px;
     opacity: 1;
@@ -51,6 +55,12 @@ input {
 .right {
     display: flex;
     gap: 44px;
+}
+
+.icons{
+    font-size: 36px;
+    width:auto;
+    height: auto;
 }
 
 .mat-mdc-menu-content {

@@ -21,6 +21,9 @@ export class GetallbooksComponent implements OnInit {
     {
       console.log(res.result);
      this.getAllBooks=res.result;
+     if(this.getAllBooks===null){
+      this.getbooks()
+     }
     })
   }
 }

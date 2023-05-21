@@ -11,9 +11,12 @@ import { DisplayBooksComponent } from './Components/display-books/display-books.
 import { ViewBooksComponent } from './Components/view-books/view-books.component';
 import { GetallbooksComponent } from './Components/getallbooks/getallbooks.component';
 import { CartComponent } from './Components/cart/cart.component';
+import { WhishListComponent } from './Components/whish-list/whish-list.component';
+import { OrderComponent } from './Components/order/order.component';
 
 import { SearchBookPipe } from './Components/pipes/search-book.pipe';
 import { AuthguardService } from './Services/authguardService/authguard.service';
+import { SortPipe } from './Components/pipes/Sortingpipe/sort.pipe';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -28,8 +31,10 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatMenuModule} from '@angular/material/menu';
-import { WhishListComponent } from './Components/whish-list/whish-list.component';
-import { OrderComponent } from './Components/order/order.component';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatSelectModule} from '@angular/material/select';
+
+
 
 @NgModule({
   declarations: [
@@ -42,7 +47,8 @@ import { OrderComponent } from './Components/order/order.component';
     SearchBookPipe,
     CartComponent,
     WhishListComponent,
-    OrderComponent
+    OrderComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,
@@ -62,6 +68,8 @@ import { OrderComponent } from './Components/order/order.component';
     MatExpansionModule,
     MatRadioModule,
     MatMenuModule,
+    MatBadgeModule,
+    MatSelectModule,
     
   ],
   providers: [

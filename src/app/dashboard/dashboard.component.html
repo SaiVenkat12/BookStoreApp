@@ -1,7 +1,7 @@
 <div class="header">
     <div class="header-content">
-        <div class="logo">
-            <img src="../../assets/education (1).svg">
+        <div class="logo" (click)="Home()">
+            <img src="../../assets/education (1).svg" style="height: 28px;">
             <h2>BookStore</h2>
         </div>
 
@@ -17,7 +17,7 @@
         <div>
             <div class="right">
                 <button mat-icon-button matTooltip="account" [matMenuTriggerFor]="menu"
-                    class="top-icons"><mat-icon>account_circle</mat-icon>
+                    class="top-icons"><mat-icon class="icons">account_circle</mat-icon>
                 </button>
                 <mat-menu #menu="matMenu">
                     <div class="userName">Hello Poonam,</div>
@@ -26,12 +26,12 @@
                         <button class="menu-btns" mat-menu-item>My Orders</button>
                         <button class="menu-btns" mat-menu-item routerLink="/home/wishlist">My Wishlist</button>
                         <button class="Logout" mat-menu-item>
-                            <span class="logout-div">Logout</span>
+                            <span class="logout-div" routerLink="/">Logout</span>
                         </button>
                     </div>
                 </mat-menu>
                 <button mat-icon-button matTooltip="Cart" class="top-icons"
-                    routerLink="/home/cart"><mat-icon>shopping_cart</mat-icon>
+                    routerLink="/home/cart"><mat-icon class="icons" [matBadge]="cartitemNo">shopping_cart</mat-icon>
                 </button>
             </div>
         </div>
