@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit,OnChanges, AfterViewInit {
+export class DashboardComponent implements OnInit {
 
   cartitemNo: any;
 
@@ -16,14 +16,6 @@ export class DashboardComponent implements OnInit,OnChanges, AfterViewInit {
 
   ngOnInit(): void {
     this.getCartItemNo();
-  }
-  ngOnChanges(changes: SimpleChanges): void {
-    this.getCartItemNo()
-  }
-  ngAfterViewInit(){
-    this.getCartItemNo()
-    console.log("view");
-    
   }
 
   Home(){
@@ -36,11 +28,8 @@ export class DashboardComponent implements OnInit,OnChanges, AfterViewInit {
     this.dataService.sendData(e.target.value)
   }
 
-
-
   getCartItemNo() {
     this.dataService.cartMessage.subscribe((response) => {
-      
       this.cartitemNo=response;
     })
     this.cartService.getCartBooks().subscribe((result: any) => {

@@ -8,6 +8,7 @@ import { AuthenticationGuard } from './Components/authguard/authentication.guard
 import { CartComponent } from './Components/cart/cart.component';
 import { WhishListComponent } from './Components/whish-list/whish-list.component';
 import { OrderComponent } from './Components/order/order.component';
+import { AdminDashBoardComponent } from './Components/admin-dash-board/admin-dash-board.component';
 
 const routes: Routes = [
   {
@@ -23,7 +24,9 @@ const routes: Routes = [
    {path:"cart", component:CartComponent},
    {path:"wishlist", component:WhishListComponent},
    { path:"order",component:OrderComponent}
-]}
+]},
+
+{path:"AdminDashBoard",component:AdminDashBoardComponent}
 ];
 
 @NgModule({

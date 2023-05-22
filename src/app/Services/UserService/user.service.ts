@@ -22,7 +22,7 @@ export class UserService {
       })
     }
 
-    return this.httpService.postService('registration', reqdata, false, {})
+    return this.httpService.postService('registration', reqdata, false, httpHeadersOption)
   }
 
   loginService(reqdata: any) {

@@ -18,7 +18,8 @@ export class ViewBooksComponent implements OnInit {
   show = true;
   bookCount = 1;
   id: any;
-  cartitemNo: any
+  cartitemNo: any; 
+  cartArr= [];
 
   constructor(private dataService: DataService, private cartServive: CartService, private route: Router,
     private snackBar: MatSnackBar, private whishlist: WhishlistService, private feedback: FeedbackService) { }
@@ -48,7 +49,8 @@ export class ViewBooksComponent implements OnInit {
 
     this.cartServive.cartAddBooks(this.id).subscribe((result: any) => {
       console.log("add to cart", result);
-      this.cartitemNo = result.result.length;
+      this.cartArr=result.result;
+      this.cartitemNo = this.cartArr.length;
       console.log("cart", this.cartitemNo);
 
       this.dataService.sendCartNo(this.cartitemNo);

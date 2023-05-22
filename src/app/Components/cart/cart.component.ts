@@ -16,25 +16,25 @@ export class CartComponent implements OnInit {
   panelOpenState = false;
   allCartBooks: any = [];
   id: any;
-  orderId:any;
+  orderId: any;
   bookCount: any;
   hide: boolean = false;
   show: boolean = false;
   updatepage: boolean = false;
   step = 0;
-  totalAmount:any=0;
-  orderArray:any=[];
-  cartitemNo: any
+  totalAmount: any = 0;
+  orderArray: any = [];
+  cartitemNo: any = [];
 
   name: any;
   mobile: any;
   city: any;
   state: any;
-  addressType:any;
-  address:any
+  addressType: any;
+  address: any
 
-  constructor(private cartService: CartService,private userService:UserService, private orderService:OrderService,private dataService:DataService,
-              private route: Router,  private snackBar: MatSnackBar, private ref: ChangeDetectorRef) { }
+  constructor(private cartService: CartService, private userService: UserService, private orderService: OrderService, private dataService: DataService,
+    private route: Router, private snackBar: MatSnackBar, private ref: ChangeDetectorRef) { }
   ngOnInit(): void {
     this.getcartBook()
     this.cartTotal()
@@ -52,7 +52,7 @@ export class CartComponent implements OnInit {
     })
   }
 
-  Home(){
+  Home() {
     this.route.navigateByUrl("/home");
   }
 
@@ -69,74 +69,74 @@ export class CartComponent implements OnInit {
     })
   }
 
-  updateCartQty(Id:any,Qty:any){
-    let reqdata={
-      "quantityToBuy":Qty
+  updateCartQty(Id: any, Qty: any) {
+    let reqdata = {
+      "quantityToBuy": Qty
     }
-    this.cartService.updateCart(Id,reqdata).subscribe((result:any)=>{
+    this.cartService.updateCart(Id, reqdata).subscribe((result: any) => {
       console.log(result);
       this.getcartBook()
     })
   }
-  updateAddress(){
-    if(this.addressType === "Office"){
-      let reqData ={
+  updateAddress() {
+    if (this.addressType === "Office") {
+      let reqData = {
         "addressType": "Office",
         "fullAddress": this.address,
         "city": this.city,
         "state": this.state
       }
-      this.userService.updateUserDetails(reqData).subscribe((result : any) => {
+      this.userService.updateUserDetails(reqData).subscribe((result: any) => {
         console.log(result);
       })
-    } 
-    else if(this.addressType === "Home") {
-      let reqData ={
+    }
+    else if (this.addressType === "Home") {
+      let reqData = {
         "addressType": "Home",
         "fullAddress": this.address,
         "city": this.city,
         "state": this.state
       }
-      this.userService.updateUserDetails(reqData).subscribe((result : any) => {
+      this.userService.updateUserDetails(reqData).subscribe((result: any) => {
         console.log(result);
-        
+
       })
-    } 
+    }
     else {
-      let reqData ={
+      let reqData = {
         "addressType": "Home",
         "fullAddress": this.address,
         "city": this.city,
         "state": this.state
       }
-      this.userService.updateUserDetails(reqData).subscribe((result : any) => {
+      this.userService.updateUserDetails(reqData).subscribe((result: any) => {
         console.log(result);
-        
+
       })
     }
   }
 
-  cartTotal(){
-    this.allCartBooks.forEach((element:any) => {
-      this.totalAmount=(element.product_id.price*element.quantityToBuy)+this.totalAmount;
+  cartTotal() {
+    this.allCartBooks.forEach((element: any) => {
+      this.totalAmount = (element.product_id.price * element.quantityToBuy) + this.totalAmount;
       //this.totalAmount+=parseInt(element.product_id.price)*parseInt(element.quantityToBuy);
     });
-    console.log("total",this.totalAmount);
+    console.log("total", this.totalAmount);
   }
 
   decrease(ID: any, bookQty: any) {
     bookQty--;
-    this.bookCount=bookQty;
+    this.bookCount = bookQty;
     console.log(this.bookCount);
-    
-    this.updateCartQty(ID,this.bookCount)
+
+    this.updateCartQty(ID, this.bookCount)
   }
 
   increase(ID: any, bookQty: any) {
     bookQty++;
-    this.bookCount=bookQty;
+    this.bookCount = bookQty;
     console.log(this.bookCount);
-    this.updateCartQty(ID,this.bookCount)
+    this.updateCartQty(ID, this.bookCount)
   }
 
   placeOrder() {
@@ -145,10 +145,10 @@ export class CartComponent implements OnInit {
     console.log(this.hide);
   }
 
-  radioout1(){
+  radioout1() {
     this.addressType = "Office";
   }
-  radioout2(){
+  radioout2() {
     this.addressType = "Home";
   }
 
@@ -158,32 +158,32 @@ export class CartComponent implements OnInit {
     this.updateAddress()
   }
 
-  Checkout(){
+  Checkout() {
 
-    for(let book of this.allCartBooks){
-      const Order = 
-        {
-          "product_id": book.product_id._id,
-          "product_name": book.product_id.bookName,
-          "product_quantity": book.quantityToBuy,
-          "product_price": book.product_id.discountPrice
-        }
-        this.orderArray.push(Order);
+    for (let book of this.allCartBooks) {
+      const Order =
+      {
+        "product_id": book.product_id._id,
+        "product_name": book.product_id.bookName,
+        "product_quantity": book.quantityToBuy,
+        "product_price": book.product_id.discountPrice
+      }
+      this.orderArray.push(Order);
     }
     console.log(this.orderArray);
-    
+
 
     let reqData = {
-      "orders" : this.orderArray
+      "orders": this.orderArray
     }
     console.log(reqData);
 
-    return this.orderService.addOrder(reqData).subscribe((result : any) => {
+    return this.orderService.addOrder(reqData).subscribe((result: any) => {
       console.log(result);
-      
-      this.orderId=result.result[0]._id;
+
+      this.orderId = result.result[0]._id;
       console.log(this.orderId);
-      
+
       this.dataService.sendData(this.orderId);
       this.route.navigateByUrl('/home/order');
     })

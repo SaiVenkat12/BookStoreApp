@@ -33,6 +33,10 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatSelectModule} from '@angular/material/select';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { AdminDashBoardComponent } from './Components/admin-dash-board/admin-dash-board.component';
+import { AdminviewBookComponent } from './Components/adminview-book/adminview-book.component';
+import { AdminDisplayBookComponent } from './Components/admin-display-book/admin-display-book.component';
 
 
 
@@ -48,7 +52,10 @@ import {MatSelectModule} from '@angular/material/select';
     CartComponent,
     WhishListComponent,
     OrderComponent,
-    SortPipe
+    SortPipe,
+    AdminDashBoardComponent,
+    AdminviewBookComponent,
+    AdminDisplayBookComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +77,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatMenuModule,
     MatBadgeModule,
     MatSelectModule,
-    
+    MatSlideToggleModule,
+
   ],
   providers: [
     AuthguardService

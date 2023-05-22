@@ -21,28 +21,33 @@ h3 {
     opacity: 1;
 }
 
-.book-count{
+.book-count {
     display: flex;
     align-items: center;
 }
 
-.sort{
-    width: 161px;
-height: 30px;
-background: #FFFFFF 0% 0% no-repeat padding-box;
-border: 1px solid #E2E2E2;
-border-radius: 1px;
-opacity: 1;
-}
-
-option{
+.sort {
+    width: 170px;
+    height: 35px;
+    font-size: 14px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
-border: 1px solid #E2E2E2;
-border-radius: 1px;
-opacity: 1;
+    border: 1px solid #E2E2E2;
+    border-radius: 1px;
+    opacity: 1;
 }
 
-.allBooks, .bookData {
+option {
+    width: 170px;
+    height: 35px;
+    font-size: 14px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E2E2E2;
+    border-radius: 1px;
+    opacity: 1;
+}
+
+.allBooks,
+.bookData {
     margin-left: 10px;
     width: 100%;
     display: flex;
@@ -78,7 +83,8 @@ img {
 }
 
 .bookTitle {
-    margin-top: 3%;;
+    margin-top: 3%;
+    ;
     padding-left: 5%;
     text-align: left;
     letter-spacing: 0px;
@@ -86,13 +92,13 @@ img {
     opacity: 1;
 }
 
-.details{
+.details {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
-.author{
+.author {
     color: #878787;
 }
 
@@ -155,7 +161,8 @@ h6 {
     background: #2E1D1E 0% 0% no-repeat padding-box;
     opacity: 1;
 }
-h5{
+
+h5 {
     margin: 0;
     margin-left: 7%;
 }
