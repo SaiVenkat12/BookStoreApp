@@ -3,7 +3,7 @@
         <div>
             <span class="book-count">
                 <h3>Books</h3>
-                <h6>(10 items)</h6>
+                <h6>({{AllBooks.length}}items)</h6>
             </span>
         </div>
         <div>
@@ -11,13 +11,14 @@
                 <option>Sort by relevance</option>
                 <option value="lowtohigh">Price : Low To High</option>
                 <option value="hightolow">Price : High To Low</option>
+                <option >Newest Arrivals</option>
             </select>
         </div>
     </div>
 
     <div class="allBooks">
         <div class="bookData">
-            <mat-card class="book-card" *ngFor="let book of  AllBooks| searchBook:Searchbookdetails | sort:sortBooks"
+            <mat-card class="book-card" *ngFor="let book of  AllBooks | searchBook:Searchbookdetails | sort:sortBooks"
                 (click)="viewBookDetails(book)">
                 <div class="book-img">
                     <img mat-card-image src="../../../assets/book_imgs/Image 11@2x.png" alt="">
@@ -41,6 +42,13 @@
         </div>
     </div>
 </div>
+<!-- <div>
+    <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+</mat-paginator>
+</div> -->
 <div class="footer">
     <h5>Copyright © 2020, Bookstore Private Limited. All Rights Reserved</h5>
 </div>

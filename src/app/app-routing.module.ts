@@ -9,6 +9,7 @@ import { CartComponent } from './Components/cart/cart.component';
 import { WhishListComponent } from './Components/whish-list/whish-list.component';
 import { OrderComponent } from './Components/order/order.component';
 import { AdminDashBoardComponent } from './Components/admin-dash-board/admin-dash-board.component';
+import { AdmingetAllBooksComponent } from './Components/adminget-all-books/adminget-all-books.component';
 
 const routes: Routes = [
   {
@@ -26,7 +27,10 @@ const routes: Routes = [
    { path:"order",component:OrderComponent}
 ]},
 
-{path:"AdminDashBoard",component:AdminDashBoardComponent}
+{path:"AdminDashBoard",component:AdminDashBoardComponent,
+children: [{ path: 'AdminAllBooks', component: AdmingetAllBooksComponent},
+{ path: '', pathMatch: 'full', redirectTo: 'AdminAllBooks'},
+]}
 ];
 
 @NgModule({

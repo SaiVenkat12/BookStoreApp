@@ -14,6 +14,11 @@ import { CartComponent } from './Components/cart/cart.component';
 import { WhishListComponent } from './Components/whish-list/whish-list.component';
 import { OrderComponent } from './Components/order/order.component';
 
+import { AdminDashBoardComponent } from './Components/admin-dash-board/admin-dash-board.component';
+import { AdminviewBookComponent } from './Components/adminview-book/adminview-book.component';
+import { AdminDisplayBookComponent } from './Components/admin-display-book/admin-display-book.component';
+import { AdmingetAllBooksComponent } from './Components/adminget-all-books/adminget-all-books.component';
+
 import { SearchBookPipe } from './Components/pipes/search-book.pipe';
 import { AuthguardService } from './Services/authguardService/authguard.service';
 import { SortPipe } from './Components/pipes/Sortingpipe/sort.pipe';
@@ -34,9 +39,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import { AdminDashBoardComponent } from './Components/admin-dash-board/admin-dash-board.component';
-import { AdminviewBookComponent } from './Components/adminview-book/adminview-book.component';
-import { AdminDisplayBookComponent } from './Components/admin-display-book/admin-display-book.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
+
 
 
 
@@ -55,7 +60,8 @@ import { AdminDisplayBookComponent } from './Components/admin-display-book/admin
     SortPipe,
     AdminDashBoardComponent,
     AdminviewBookComponent,
-    AdminDisplayBookComponent
+    AdminDisplayBookComponent,
+    AdmingetAllBooksComponent
   ],
   imports: [
     BrowserModule,
@@ -78,6 +84,8 @@ import { AdminDisplayBookComponent } from './Components/admin-display-book/admin
     MatBadgeModule,
     MatSelectModule,
     MatSlideToggleModule,
+    MatPaginatorModule,
+    MatTableModule,
 
   ],
   providers: [

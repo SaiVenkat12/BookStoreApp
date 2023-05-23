@@ -1,0 +1,135 @@
+.display {
+    margin-left: 8%;
+}
+
+.header {
+    margin: 20px;
+    margin-right: 11%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+h3 {
+    width: 70px;
+    height: 33px;
+    text-align: left;
+    font: normal normal normal 25px/33px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.book-count {
+    display: flex;
+    align-items: center;
+}
+
+.sort {
+    width: 170px;
+    height: 35px;
+    font-size: 14px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E2E2E2;
+    border-radius: 1px;
+    opacity: 1;
+}
+
+option {
+    width: 170px;
+    height: 35px;
+    font-size: 14px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E2E2E2;
+    border-radius: 1px;
+    opacity: 1;
+}
+
+.allBooks{
+    margin-left: 10px;
+    width: 89%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 75px;
+}
+
+.book-card {
+    margin: 12px;
+    min-height: 345px;
+    width: 348px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E2E2E2;
+    border-radius: 3px;
+    opacity: 1;
+    cursor: pointer;
+}
+
+// td{
+//     width: 250px;
+// }
+
+.book-img{
+    width: 100px;
+    height: 122px;
+    margin: 12px;
+}
+
+.add-btn{
+    width: 100%;
+    display: flex;
+    margin: 14px;
+    justify-content: flex-end;
+}
+
+.action-btns{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.side-btn{
+    padding-right: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.table-head {
+    text-align: center;
+    font-size: 18px;
+    line-height: 16px;
+    font-family: Roboto;
+    font-weight: 600;
+    color: #0A0102;
+}
+
+.table-data{
+    text-align: center;
+    font-size: 14px;
+}
+
+h6 {
+    font: normal normal normal 10px/13px Roboto;
+    letter-spacing: 0px;
+    color: #878787;
+    opacity: 1;
+}
+
+.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    margin-top: 50px;
+    padding: 20px;
+    font: normal normal medium 12px/15px Lato;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    background: #2E1D1E 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+h5 {
+    margin: 0;
+    margin-left: 7%;
+}
