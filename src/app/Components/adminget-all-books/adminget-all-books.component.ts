@@ -26,4 +26,9 @@ export class AdmingetAllBooksComponent implements OnInit {
      }
     })
   }
+
+  getRefeshevent(){
+    console.log("refesh after delete");
+    this.getbooks()
+  }
 }

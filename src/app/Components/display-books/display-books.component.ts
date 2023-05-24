@@ -1,7 +1,7 @@
-import { AnimationKeyframesSequenceMetadata } from '@angular/animations';
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/Services/DataService/data.service';
+import { AdminBookService } from 'src/app/Services/adminBookService/admin-book.service';
 @Component({
   selector: 'app-display-books',
   templateUrl: './display-books.component.html',
@@ -11,7 +11,7 @@ export class DisplayBooksComponent implements OnInit {
   @Input() AllBooks: any
 
   Searchbookdetails: any;
-  sortBooks:any
+  sortBooks: any
 
   constructor(private route: Router, private dataService: DataService) { }
 
@@ -28,9 +28,9 @@ export class DisplayBooksComponent implements OnInit {
 
     })
   }
-  
-  sort(e:any){
-    this.sortBooks=e.target.value;
+
+  sort(e: any) {
+    this.sortBooks = e.target.value;
   }
 
   viewBookDetails(book: any) {
@@ -39,7 +39,8 @@ export class DisplayBooksComponent implements OnInit {
     this.route.navigateByUrl("/home/viewBookDetails");
   }
 
- 
-  }
+  
+
+}
 
 
