@@ -18,10 +18,10 @@
 
     <div class="allBooks">
         <div class="add-btn">
-            <button mat-raised-button color="primary" (click)="openDialog()"
-            style=" width: 150px; height: 48px; font-size: 18px; background: green; cursor: pointer;">+ Add</button>
+            <button class="add" mat-raised-button color="primary" (click)="openDialog()"
+            style="background: green;">+ Add</button>
         </div>
-        <table mat-table [dataSource]="AllBooks" class="mat-elevation-z8">
+        <table mat-table [dataSource]="AllBooks |slice: lowValue : highValue" class="mat-elevation-z8">
             <ng-container matColumnDef="image">
                 <th mat-header-cell *matHeaderCellDef class="table-head"> Image </th>
                 <td mat-cell *matCellDef="let element" class="table-data">
@@ -47,7 +47,7 @@
                 <td mat-cell *matCellDef="let element" class="table-data"> {{element.price}} </td>
             </ng-container>
             <ng-container matColumnDef="discountPrice">
-                <th mat-header-cell *matHeaderCellDef class="table-head"> Discount Price</th>
+                <th mat-header-cell *matHeaderCellDef class="table-head"> Discount</th>
                 <td mat-cell *matCellDef="let element" class="table-data"> {{element.discountPrice}} </td>
             </ng-container>
             <ng-container matColumnDef="Quantity">
@@ -66,10 +66,12 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
     </div>
-    <!-- <div>
-        <mat-paginator [length]="5" [pageSize]="2" [pageSizeOptions]="[1,2]" aria-label="Select page">
-        </mat-paginator>
-    </div> -->
+    <div class="page">
+        <mat-paginator [length]="AllBooks.length" pageSize=4
+               (page)="getPaginatorData($event)" [pageSizeOptions]="[4, 6, 8]"
+               showFirstLastButtons="false">
+</mat-paginator>     
+    </div>
 </div>
 
 <!-- <div class="footer">

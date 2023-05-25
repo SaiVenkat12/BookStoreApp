@@ -1,10 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/Services/DataService/data.service';
 import { AdminviewBookComponent } from '../adminview-book/adminview-book.component';
 import { AdminBookService } from 'src/app/Services/adminBookService/admin-book.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-admin-display-book',
@@ -16,17 +17,32 @@ export class AdminDisplayBookComponent implements OnInit {
   @Input() AllBooks: any;
   @Output() refreshpage = new EventEmitter();
 
+
   displayedColumns: string[] = ['image', 'name', 'author', 'Price', 'discountPrice', 'Quantity', 'Actions'];
 
   Searchbookdetails: any;
-  sortBooks: any
+  sortBooks: any;
+
+  page:any
+  lowValue: number = 0;
+  highValue: number = 20;
 
   constructor(private route: Router, private dataService: DataService, private adminBookService: AdminBookService,
     private snackBar: MatSnackBar, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.bookSearch();
+    //this.getPaginatorData(this.page)
   }
+  
+  getPaginatorData(event: PageEvent): PageEvent {
+    console.log("page");
+    
+    this.lowValue = event.pageIndex * event.pageSize;
+    this.highValue = this.lowValue + event.pageSize;
+    return event;
+  }
+  
 
   bookSearch() {
     console.log("search book");
@@ -65,10 +81,10 @@ export class AdminDisplayBookComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log('The dialog was closed');
       console.log(result);
-      if(result){
+      if (result) {
         this.refreshpage.emit();
       }
-      
+
     });
   }
 }
