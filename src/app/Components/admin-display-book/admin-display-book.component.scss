@@ -32,16 +32,6 @@ h6 {
     opacity: 1;
 }
 
-.sort {
-    width: 170px;
-    height: 35px;
-    font-size: 14px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    border: 1px solid #E2E2E2;
-    border-radius: 1px;
-    opacity: 1;
-}
-
 option {
     width: 170px;
     height: 35px;
@@ -70,10 +60,6 @@ option {
     opacity: 1;
     cursor: pointer;
 }
-
-// td{
-//     width: 250px;
-// }
 
 .book-img{
     width: 100px;
@@ -193,6 +179,10 @@ option {
     .allBooks{
         margin: 0;
         width: 100%;
+    }
+
+    .page{
+        display: none;
     }
 }
 

@@ -75,3 +75,53 @@ img {
     flex-direction: column;
     gap: 10px;
 }
+
+@media only screen and (max-width: 815px){
+    .list{
+        width: 90%;
+    }
+
+    .display{
+        margin-left: 4%;
+    }
+}
+
+@media only screen and (max-width: 550px){
+
+    .display{
+        margin-left: 0;
+    }
+
+    .list{
+        width: 98%;
+    }
+
+    .bookTitle{
+        margin-top: 0;
+        margin-left: 0;
+        font-size: 19px;
+        font-weight: 600;
+    }
+
+    .book-img {
+        margin-left: 0;
+        width: 115px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .book{
+        width: 90px;
+        height: 90%;
+    }
+
+    .details{
+        padding: 0;
+    }
+
+    .side{
+        display: flex;
+        justify-content: flex-end;
+    }
+}

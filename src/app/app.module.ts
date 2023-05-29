@@ -42,6 +42,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 
@@ -88,6 +89,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatPaginatorModule,
     MatTableModule,
     MatDialogModule,
+    MatTooltipModule,
+    
 
   ],
   providers: [

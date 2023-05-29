@@ -32,6 +32,10 @@
     display: flex;
 }
 
+.book-imgs {
+    display: flex;
+}
+
 .book-front {
     width: 44px;
     height: 54px;
@@ -263,4 +267,24 @@ button {
 
 .comments {
     margin: 2%;
+}
+
+@media only screen and (max-width: 830px) {
+    .book-details {
+        flex-direction: column;
+    }
+
+    .book-info {
+        margin-left: 8%;
+        margin-top: 22px;
+        margin-right: 8%;
+        gap: 10px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .img-div {
+        width: 292px;
+        height: 355px;
+    }
 }

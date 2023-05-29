@@ -9,7 +9,7 @@
             <div class="bookDetails">
                 <mat-card class="book-card">
                     <div class="book-card-title">
-                        <mat-card-title>My Cart({{allCartBooks.length}})</mat-card-title>
+                        <mat-card-title class="myCart">My Cart({{allCartBooks.length}})</mat-card-title>
                         <mat-card-actions>
                             <span class="cart-Address">BridgeLabz Solutions LLP, No...</span>
                         </mat-card-actions>
@@ -129,7 +129,7 @@
                                             <span class="author">{{book.product_id.author}}</span>
                                             <span class="price-Qty">
                                                 <h1>Rs.{{book.product_id.price}}</h1>
-                                                <h4>X{{book.quantityToBuy}} (Qty)</h4>
+                                                <h4>X{{book.quantityToBuy}}</h4>
                                             </span>
                                         </mat-card-content>
                                     </div>

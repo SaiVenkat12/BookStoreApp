@@ -54,16 +54,16 @@
     opacity: 1;
 }
 
-.exp-panel-closed{
+.exp-panel-closed {
     min-height: 60px;
     display: flex;
 }
 
-.exp-panel{
+.exp-panel {
     width: 100%;
 }
 
-.exp-panel-header{
+.exp-panel-header {
     min-height: 60px;
 }
 
@@ -82,6 +82,7 @@
 
 .book-info {
     display: flex;
+    align-items: center;
 }
 
 img {
@@ -201,20 +202,20 @@ img {
     gap: 12px;
 }
 
-.input{
+.input {
     width: 251px;
-height: 45px;
-background: #FFFFFF 0% 0% no-repeat padding-box;
-border: 1px solid #DCDCDC;
-opacity: 1;
+    height: 45px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #DCDCDC;
+    opacity: 1;
 }
 
-.input-sec{
+.input-sec {
     display: flex;
     flex-direction: column;
 }
 
-.radio-div{
+.radio-div {
     display: flex;
     gap: 8%;
 }
@@ -270,17 +271,84 @@ opacity: 1;
     box-shadow: none;
 }
 
-.price-Qty{
+.price-Qty {
     display: flex;
     align-items: baseline;
     gap: 10px;
 }
 
-.total{
+.total {
     margin: 2%;
     padding-right: 10px;
     display: flex;
     justify-content: flex-end;
     font-size: 19px;
     font-weight: 600;
+}
+
+@media only screen and (max-width: 1150px) {
+    img {
+        width: 40%;
+        height: 80%;
+    }
+
+    .cards {
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+
+    .card-out {
+        margin-right: 0;
+    }
+
+    .cards {
+        width: 98%;
+    }
+
+}
+
+@media only screen and (max-width: 550px) {
+
+    .display{
+        margin: 3%;
+    }
+
+    .cart-Address{
+        width: 140px;
+    }
+
+    .Qty-btn {
+        width: 24px;
+        height: 24px;
+    }
+
+    .myCart, .bookTitle{
+        font-size: 16px;
+    }
+
+    .author{
+        font-size: 12px;
+    }
+
+    h1{
+        font-size: 16px;
+    }
+
+    .books-Qty{
+        margin: 2px;
+    }
+
+    .input-div1{
+        flex-direction: column;
+    }
+
+    .Address-input{
+        width: auto;
+    }
+
+    .continue-div{
+        justify-content: center;
+    }
 }

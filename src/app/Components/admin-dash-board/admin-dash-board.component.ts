@@ -10,8 +10,9 @@ import { Router } from '@angular/router';
 export class AdminDashBoardComponent {
 
   constructor(private dataService: DataService, private route:Router){}
+
   Home() {
-    this.route.navigateByUrl("/home");
+    this.route.navigateByUrl("/AdminDashBoard");
   }
 
   SearchBooks(e: any) {

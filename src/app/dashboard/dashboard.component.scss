@@ -46,6 +46,7 @@ h2 {
 }
 
 input {
+    width: 100%;
     font: normal 17px Google Sans, Roboto, Helvetica, Arial, sans-serif;
     outline: none;
     border: none;
@@ -55,6 +56,10 @@ input {
 .right {
     display: flex;
     gap: 44px;
+}
+
+img{
+    height: 28px;
 }
 
 .icons{
@@ -98,4 +103,58 @@ opacity: 1;
     letter-spacing: 0px;
 color: #A03037;
 opacity: 1;
+}
+
+@media only screen and (max-width: 1350px) {
+
+    .header-content {
+        width: 100%;
+        padding-right: 0;
+        justify-content: space-around;
+    }
+
+    .searchbar {
+        width: 450px;
+    }
+}
+@media only screen and (max-width: 1050px){
+    img{
+        height: 24px;
+    }
+
+    h2{
+        font-size: 20px;
+    }
+
+    .searchbar {
+        width: 350px;
+        height: 30px;
+    }
+
+    .icons {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+
+    .header-content {
+        justify-content: space-between;
+    }
+
+    .logo {
+        margin: 4px;
+    }
+
+    .right{
+        gap: 0;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .searchbar {
+        width: 130px;
+    }
 }

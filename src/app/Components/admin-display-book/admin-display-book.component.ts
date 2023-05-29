@@ -6,6 +6,7 @@ import { AdminviewBookComponent } from '../adminview-book/adminview-book.compone
 import { AdminBookService } from 'src/app/Services/adminBookService/admin-book.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { DataSource } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-admin-display-book',
@@ -14,15 +15,16 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 })
 export class AdminDisplayBookComponent implements OnInit {
 
-  @Input() AllBooks: any;
+  @Input() AllBooks: any=[];
   @Output() refreshpage = new EventEmitter();
+
+  dataSource=[];
 
 
   displayedColumns: string[] = ['image', 'name', 'author', 'Price', 'discountPrice', 'Quantity', 'Actions'];
 
   Searchbookdetails: any;
   sortBooks: any;
-
   page:any
   lowValue: number = 0;
   highValue: number = 20;
@@ -54,15 +56,7 @@ export class AdminDisplayBookComponent implements OnInit {
     })
   }
 
-  sort(e: any) {
-    this.sortBooks = e.target.value;
-    console.log("sort", this.sortBooks);
-
-  }
-
-
   remove(id: any) {
-    console.log(id);
     this.adminBookService.deleteBook(id).subscribe((result: any) => {
       console.log(result);
       this.snackBar.open('Book Removed !', 'ok', {
@@ -76,15 +70,13 @@ export class AdminDisplayBookComponent implements OnInit {
     const dialogRef = this.dialog.open(AdminviewBookComponent, {
       data: element,
     });
-    console.log("data", element);
-
+    //console.log("data", element);
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log('The dialog was closed');
       console.log(result);
       if (result) {
         this.refreshpage.emit();
       }
-
     });
   }
 }

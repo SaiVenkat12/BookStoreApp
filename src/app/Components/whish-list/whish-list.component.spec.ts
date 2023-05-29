@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WhishListComponent } from './whish-list.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('WhishListComponent', () => {
   let component: WhishListComponent;
@@ -8,6 +10,7 @@ describe('WhishListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[MatSnackBarModule,HttpClientModule],
       declarations: [ WhishListComponent ]
     })
     .compileComponents();

@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ViewBooksComponent } from './view-books.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCardModule } from '@angular/material/card';
 
 describe('ViewBooksComponent', () => {
   let component: ViewBooksComponent;
@@ -8,9 +12,10 @@ describe('ViewBooksComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewBooksComponent ]
+      imports: [HttpClientModule, MatDividerModule, MatSnackBarModule, MatCardModule],
+      declarations: [ViewBooksComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ViewBooksComponent);
     component = fixture.componentInstance;

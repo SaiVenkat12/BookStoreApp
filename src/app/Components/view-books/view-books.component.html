@@ -4,26 +4,28 @@
         <span class="bookNo">/Book(01)</span>
     </div>
     <div class="book-details">
-        <div class="book-cover">
-            <div class="book-front">
-                <img class="cover-img" src="../../../assets/book_imgs/Image 1.png">
-            </div>
-            <div class="book-back">
-                <img class="cover-img" src="../../../assets/book_imgs/Image 46.png">
-            </div>
-        </div>
-        <div class="img-btns">
-            <div class="img-div">
-                <img class="main-img" src="../../../assets/book_imgs/Image 11@2x.png">
-            </div>
-            <div class="btns">
-                <button mat-flat-button *ngIf="show" (click)="AddToCart()" style="background: #A03037;color: #ffff;width: 140px;">Add To Bag </button>
-                <div class="books-Qty" *ngIf="!show">
-                    <button class="Qty-btn" [disabled]="bookCount === 1" (click)=" decrease()">-</button>
-                    <div class="qty">{{bookCount}}</div>
-                    <button class="Qty-btn" (click)="increase()">+</button>
+        <div class="book-imgs">
+            <div class="book-cover">
+                <div class="book-front">
+                    <img class="cover-img" src="../../../assets/book_imgs/Image 1.png">
                 </div>
-                <button mat-flat-button (click)="AddToWhishlist()" style="background: black;color: #ffff;width: 140px;">wishlist </button>
+                <div class="book-back">
+                    <img class="cover-img" src="../../../assets/book_imgs/Image 46.png">
+                </div>
+            </div>
+            <div class="img-btns">
+                <div class="img-div">
+                    <img class="main-img" src="../../../assets/book_imgs/Image 11@2x.png">
+                </div>
+                <div class="btns">
+                    <button mat-flat-button *ngIf="show" (click)="AddToCart()" style="background: #A03037;color: #ffff;width: 140px;">Add To Bag </button>
+                    <div class="books-Qty" *ngIf="!show">
+                        <button class="Qty-btn" [disabled]="bookCount === 1" (click)=" decrease()">-</button>
+                        <div class="qty">{{bookCount}}</div>
+                        <button class="Qty-btn" (click)="increase()">+</button>
+                    </div>
+                    <button mat-flat-button (click)="AddToWhishlist()" style="background: black;color: #ffff;width: 140px;">wishlist </button>
+                </div>
             </div>
         </div>
 

@@ -52,7 +52,7 @@ option {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 75px;
+    margin-bottom: 50px;
 }
 
 .book-card {
@@ -148,6 +148,24 @@ h6 {
     opacity: 1;
 }
 
+.page-div {
+    // position: fixed;
+    // left: 0;
+    // bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.page {
+   // position: fixed;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+
 .footer {
     position: fixed;
     width: 100%;
@@ -164,4 +182,90 @@ h6 {
 h5 {
     margin: 0;
     margin-left: 7%;
+}
+
+@media only screen and (max-width: 1350px) {
+    .display {
+        margin-left: 6%;
+    }
+}
+
+@media only screen and (max-width: 1220px) {
+    .display {
+        margin-left: 4%;
+    }
+
+    .page-div{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1030px) {
+    .display {
+        margin-right: 4%;
+    }
+
+    .bookData {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .display {
+        margin: 1%;
+    }
+
+    .book-card {
+        margin: 8px;
+        width: 320px;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+
+    h5 {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .book-card {
+        width: 176px;
+        min-height: auto;
+    }
+
+    .book-img {
+        padding: 4%;
+    }
+
+    img {
+        width: 100px;
+        height: 120px;
+    }
+
+    .allBooks,
+    .bookData {
+        margin-left: 0;
+    }
+
+    .bookTitle {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .author {
+        font-size: 12px;
+    }
+
+    .details {
+        padding-bottom: 2px;
+    }
+}
+
+@media only screen and (max-width: 391px) {
+    .book-card {
+        width: 160px;
+    }
 }
