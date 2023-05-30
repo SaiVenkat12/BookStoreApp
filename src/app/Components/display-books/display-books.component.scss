@@ -220,6 +220,13 @@ h5 {
         margin: 8px;
         width: 320px;
     }
+    
+    .allBooks,
+    .bookData {
+        margin-left: 0;
+    }
+
+
 
     h1 {
         font-size: 16px;
@@ -232,7 +239,6 @@ h5 {
 
 @media only screen and (max-width: 550px) {
     .book-card {
-        width: 176px;
         min-height: auto;
     }
 
@@ -243,11 +249,6 @@ h5 {
     img {
         width: 100px;
         height: 120px;
-    }
-
-    .allBooks,
-    .bookData {
-        margin-left: 0;
     }
 
     .bookTitle {
@@ -261,11 +262,5 @@ h5 {
 
     .details {
         padding-bottom: 2px;
-    }
-}
-
-@media only screen and (max-width: 391px) {
-    .book-card {
-        width: 160px;
     }
 }

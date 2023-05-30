@@ -20,7 +20,6 @@ export class AdminDisplayBookComponent implements OnInit {
 
   dataSource=[];
 
-
   displayedColumns: string[] = ['image', 'name', 'author', 'Price', 'discountPrice', 'Quantity', 'Actions'];
 
   Searchbookdetails: any;
