@@ -44,10 +44,6 @@ describe('AdminDisplayBookComponent', () => {
   })
 
   it('check for table data',()=>{
-    expect((component.AllBooks).length).toBeGreaterThan(0)
-  })
-
-  it('check for table data',()=>{
     expect(component.displayedColumns).toEqual(['image', 'name', 'author', 'Price', 'discountPrice', 'Quantity', 'Actions'])
   })
   

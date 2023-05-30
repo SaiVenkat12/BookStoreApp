@@ -78,6 +78,7 @@ export class CartComponent implements OnInit {
       this.getcartBook()
     })
   }
+
   updateAddress() {
     if (this.addressType === "Office") {
       let reqData = {
@@ -87,6 +88,7 @@ export class CartComponent implements OnInit {
         "state": this.state
       }
       this.userService.updateUserDetails(reqData).subscribe((result: any) => {
+        this.show = !this.show;
         console.log(result);
       })
     }
@@ -98,6 +100,7 @@ export class CartComponent implements OnInit {
         "state": this.state
       }
       this.userService.updateUserDetails(reqData).subscribe((result: any) => {
+        this.show = !this.show;
         console.log(result);
 
       })
@@ -110,6 +113,7 @@ export class CartComponent implements OnInit {
         "state": this.state
       }
       this.userService.updateUserDetails(reqData).subscribe((result: any) => {
+        this.show = !this.show;
         console.log(result);
 
       })
@@ -154,7 +158,6 @@ export class CartComponent implements OnInit {
 
   continue() {
     this.step = 2;
-    this.show = !this.show;
     this.updateAddress()
   }
 
