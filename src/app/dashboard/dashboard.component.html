@@ -25,8 +25,8 @@
                         <button class="menu-btns" mat-menu-item>Profile</button>
                         <button class="menu-btns" mat-menu-item>My Orders</button>
                         <button class="menu-btns" mat-menu-item routerLink="/home/wishlist">My Wishlist</button>
-                        <button class="Logout" mat-menu-item>
-                            <span class="logout-div" routerLink="/login">Logout</span>
+                        <button class="Logout" mat-menu-item (click)="logOut()">
+                            <span class="logout-div">Logout</span>
                         </button>
                     </div>
                 </mat-menu>

@@ -35,6 +35,18 @@ export class AdminDisplayBookComponent implements OnInit {
     this.bookSearch();
     //this.getPaginatorData(this.page)
   }
+
+  bookSearch() {
+    console.log("search book");
+
+    this.dataService.currentSearchMessage.subscribe((response) => {
+      //console.log(response);
+      
+      this.Searchbookdetails = response;
+      console.log("Search",this.Searchbookdetails);
+
+    })
+  }
   
   getPaginatorData(event: PageEvent): PageEvent {
     console.log("page");
@@ -44,16 +56,6 @@ export class AdminDisplayBookComponent implements OnInit {
     return event;
   }
   
-
-  bookSearch() {
-    console.log("search book");
-
-    this.dataService.currentMessage.subscribe((response) => {
-      this.Searchbookdetails = response;
-      console.log(this.Searchbookdetails);
-
-    })
-  }
 
   remove(id: any) {
     this.adminBookService.deleteBook(id).subscribe((result: any) => {

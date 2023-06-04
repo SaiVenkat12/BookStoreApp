@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit,AfterViewChecked, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, AfterViewInit, AfterViewChecked, OnChanges, SimpleChanges } from '@angular/core';
 import { DataService } from '../Services/DataService/data.service';
 import { CartService } from 'src/app/Services/cartService/cart.service';
 import { Router } from '@angular/router';
@@ -12,30 +12,35 @@ export class DashboardComponent implements OnInit {
 
   cartitemNo: any;
 
-  constructor(private dataService: DataService, private cartService: CartService,private route:Router){}
+  constructor(private dataService: DataService, private cartService: CartService, private route: Router) { }
 
   ngOnInit(): void {
     this.getCartItemNo();
   }
 
-  Home(){
+  logOut() {
+    console.log("log");
+    
+    this.route.navigateByUrl("/login")
+  }
+
+  Home() {
     this.route.navigateByUrl("/home");
   }
 
-  SearchBooks(e:any){
-    console.log(e.target.value);
-    
-    this.dataService.sendData(e.target.value)
+  SearchBooks(e: any) {
+    //console.log(e.target.value);
+    this.dataService.sendSearchdata(e.target.value)
   }
 
   getCartItemNo() {
     this.dataService.cartMessage.subscribe((response) => {
-      this.cartitemNo=response;
+      this.cartitemNo = response;
     })
     this.cartService.getCartBooks().subscribe((result: any) => {
       console.log(result.result);
       this.cartitemNo = result.result.length;
       console.log(this.cartitemNo);
     })
-}
+  }
 }

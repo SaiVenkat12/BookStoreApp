@@ -38,7 +38,7 @@ describe('AdminDisplayBookComponent', () => {
     expect(bookElement.querySelector(".add-btn").textContent).toContain('+ Add')
   })
 
-  it('check for table add button',()=>{
+  it('check for table element',()=>{
     const bookElement=fixture.nativeElement;
     expect(bookElement.querySelector(".table-head").textContent).toContain('Image')
   })

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/Services/DataService/data.service';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
@@ -8,10 +8,13 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
   styleUrls: ['./display-books.component.scss']
 })
 export class DisplayBooksComponent implements OnInit {
+
   @Input() AllBooks: any=[];
+  @Output() refresh = new EventEmitter();
 
   Searchbookdetails: any;
   sortBooks: any;
+  displayBooks:any=[]
 
   page:any
   lowValue: number = 0;
@@ -20,15 +23,20 @@ export class DisplayBooksComponent implements OnInit {
   constructor(private route: Router, private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.AllBooks=this.displayBooks;
+    console.log("display",this.displayBooks);
+    
     this.bookSearch();
   }
 
   bookSearch() {
     console.log("search book");
+    //this.refresh.emit();
 
-    this.dataService.currentMessage.subscribe((response) => {
+    this.dataService.currentSearchMessage.subscribe((response) => {
+      //console.log(response);
       this.Searchbookdetails = response;
-      console.log(this.Searchbookdetails);
+      console.log("Search",this.Searchbookdetails);
 
     })
   }

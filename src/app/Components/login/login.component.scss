@@ -12,6 +12,7 @@
 
 .login-content {
     display: flex;
+    background: #707070;
 }
 
 .mobile-title{
@@ -105,11 +106,21 @@ img {
     background: #A03037;
 }
 
-@media only screen and (max-width: 550px){
-    
+@media only screen and (max-width: 1120px){
+    .img-div{
+        padding-left: 0;
+    }
+}
+@media only screen and (max-width: 900px){
+    .login-content{
+        justify-content: center;
+    }
+    .user-details{
+        margin-top: 70px;
+    }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 750px) {
     .img-div{
         display: none;
     }
@@ -121,6 +132,7 @@ img {
 
     .user-details{
         display: flex;
+        justify-content: center;
         margin: 0;
         height: 100%;
     }

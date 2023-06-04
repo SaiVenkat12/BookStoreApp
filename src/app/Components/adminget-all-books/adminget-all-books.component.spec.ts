@@ -33,4 +33,8 @@ describe('AdmingetAllBooksComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('',()=>{
+    expect((component.getbooks()))
+  })
 });

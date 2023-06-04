@@ -9,6 +9,7 @@ import { BookService } from 'src/app/Services/BookService/book.service';
 export class AdmingetAllBooksComponent implements OnInit {
 
   getAllBooks=[]
+  apiCall:boolean=false
 
   constructor(private bookService:BookService){}
 
@@ -21,9 +22,10 @@ export class AdmingetAllBooksComponent implements OnInit {
     {
       console.log(res.result);
      this.getAllBooks=res.result;
-     if(this.getAllBooks===null){
-      this.getbooks()
-     }
+     this.apiCall=true;
+    //  if(this.getAllBooks===null){
+    //   this.getbooks()
+    //  }
     })
   }
 

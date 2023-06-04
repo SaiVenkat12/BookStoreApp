@@ -19,11 +19,18 @@ export class GetallbooksComponent implements OnInit {
   getbooks(){
     this.bookService.getAllBooksData().subscribe((res:any)=>
     {
-      console.log(res.result);
+      console.log('get all books');
+      console.log("all Books",res.result);
      this.getAllBooks=res.result;
-     if(this.getAllBooks===null){
-      this.getbooks()
-     }
+    //  if(this.getAllBooks===null){
+    //   this.getbooks()
+    //  }
     })
+  }
+
+  getRefeshevent(){
+
+    console.log("refresh");
+    this.getbooks()
   }
 }

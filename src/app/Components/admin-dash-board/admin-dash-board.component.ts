@@ -16,7 +16,7 @@ export class AdminDashBoardComponent {
   }
 
   SearchBooks(e: any) {
-    console.log(e.target.value);
-    this.dataService.sendData(e.target.value)
+    //console.log(e.target.value);
+    this.dataService.sendSearchdata(e.target.value)
   }
 }

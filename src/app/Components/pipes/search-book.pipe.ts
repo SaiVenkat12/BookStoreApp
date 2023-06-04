@@ -10,7 +10,7 @@ export class SearchBookPipe implements PipeTransform {
       return value;
     }
     return value?.filter((data:any)=>{
-      return data.bookName.toLowerCase().includes(args) || data.author.toLowerCase().includes(args)
+      return data.bookName.toLowerCase().includes(args) || data.author.toLowerCase().includes(args) || data.price.toString().includes(args)
     })
   }
 

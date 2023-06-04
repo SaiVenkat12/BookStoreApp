@@ -29,4 +29,9 @@ describe('DisplayBooksComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('check for table sort option',()=>{
+    const bookElement=fixture.nativeElement;
+    expect(bookElement.querySelector(".sort").textContent).toContain('Sort by relevance')
+  })
 });
